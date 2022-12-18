@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/web/WEB-INF/mvc-setup.json</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/src/java/cat/urv/deim/sob/model/User.java</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/web/install.jsp</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/src/java/cat/urv/deim/sob/service/UserService.java</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/src/java/cat/urv/deim/sob/command/Command.java</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/web/views/signup-form.jsp</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/src/java/cat/urv/deim/sob/command/signUpFormCommand.java</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/src/java/cat/urv/deim/sob/ControllerServlet.java</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/web/views/signup-success.jsp</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/src/java/cat/urv/deim/sob/model/Cryptocurrency.java</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/src/java/cat/urv/deim/sob/command/cryptocurrencyList.java</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/src/java/cat/urv/deim/sob/service/CryptocurrencyService.java</file>
+            <file>file:/C:/Users/marcr/OneDrive/Escritorio/SOBASE/web/views/cryptocurrency-list.jsp</file>
+        </group>
+    </open-files>
+</project-private>

@@ -6,6 +6,8 @@ import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.core.GenericEntity;
+import jakarta.ws.rs.core.GenericType;
 import java.util.List;
         
 public class CryptocurrencyService {
@@ -18,11 +20,12 @@ public class CryptocurrencyService {
         webTarget = client.target(BASE_URI).path("cryptocurrency");
     }
     
-     public Response findAll(String order) {
-        WebTarget resource = webTarget.queryParam("order",order);
-        Response response = resource.request(MediaType.APPLICATION_XML).get();
-        return response.getStatus() == 200 ? response : null;
-     
+    public List<Cryptocurrency> findAll(String order) {
+       WebTarget resource = webTarget.queryParam("order",order);
+       Response response = resource.request(MediaType.APPLICATION_JSON).get();
+        
+       return (response.getStatus() == 200) ? response.readEntity(new GenericType<List<Cryptocurrency>>() {}) : null;
+                
     }
 	
 

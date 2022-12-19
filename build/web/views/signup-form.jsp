@@ -53,7 +53,8 @@
 					<form>
                                         <c:if test="${not empty message}">
                                             <div class="alert alert-danger" role="alert">
-                                                ${message}        
+                                                ${message}  
+                                     
                                             </div>
                                         </c:if>
                                 </div>

@@ -27,6 +27,12 @@ public class CryptocurrencyService {
        return (response.getStatus() == 200) ? response.readEntity(new GenericType<List<Cryptocurrency>>() {}) : null;
                 
     }
+    
+    public Cryptocurrency getCryptocurrency(Integer id){
+        WebTarget resource = webTarget.path("cryptocurrency").path(String.valueOf(id));
+        Response response = resource.request(MediaType.APPLICATION_JSON).get();
+        return (response.getStatus() == 200) ? response.readEntity(Cryptocurrency.class) : null;
+    }
 	
 
 }

@@ -8,6 +8,15 @@
     {
         "URI": "/cryptocurrency",
         "class": "cat.urv.deim.sob.command.cryptocurrencyListCommand" 
+    },
+    {
+        "URI": "/ajax",
+        "class": "cat.urv.deim.sob.command.ajaxCommand" 
+    },
+    
+    {
+        "URI": "/detailedCryptocurrency",
+        "class": "cat.urv.deim.sob.command.detailedCryptocurrencyCommand" 
     }
   ]
 }

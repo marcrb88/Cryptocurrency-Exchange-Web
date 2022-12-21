@@ -13,7 +13,7 @@ public class Cryptocurrency  {
     private float lastQuote;
     
     private Date lastQuoteTime;
- 
+    
     public Cryptocurrency() {}
 
     public int getId() {

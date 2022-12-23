@@ -17,6 +17,15 @@
     {
         "URI": "/detailedCryptocurrency",
         "class": "cat.urv.deim.sob.command.detailedCryptocurrencyCommand" 
+    },
+    {
+        "URI": "/buyCryptocurrency",
+        "class": "cat.urv.deim.sob.command.buyCryptocurrencyCommand" 
+    },
+    
+    {
+        "URI": "/resumePurchase",
+        "class": "cat.urv.deim.sob.command.resumePurchaseCommand" 
     }
   ]
 }

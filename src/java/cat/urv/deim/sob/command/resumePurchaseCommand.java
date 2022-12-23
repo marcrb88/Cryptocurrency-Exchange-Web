@@ -4,47 +4,38 @@
  */
 package cat.urv.deim.sob.command;
 
-import cat.urv.deim.sob.model.Cryptocurrency;
 import cat.urv.deim.sob.model.Order;
 import cat.urv.deim.sob.service.CryptocurrencyService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.ws.rs.core.Response;
 import java.io.IOException;
-import java.util.List;
+
 
 /**
  *
  * @author marcr
  */
-public class detailedCryptocurrencyCommand implements Command {
+public class resumePurchaseCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
-        String cryptoId = request.getParameter("id");
         
-        String view = "views/detailedCryptocurrency.jsp";
+        String view = "views/resumePurchase.jsp";
+        Order order = new Order();
+        order.setAmount(Float.valueOf(request.getParameter("amount")));
         
         CryptocurrencyService cs = new CryptocurrencyService();
  
-        Order order = cs.getOrder(cryptoId); 
-        
-        if (order == null) {
-            Cryptocurrency crypto = cs.getCryptocurrency(cryptoId);
-            request.setAttribute("crypto", crypto);
-        } else {
-            request.setAttribute("order", order);
-        }
+        Order order2 = cs.getOrder("2"); 
+       
+        request.setAttribute("order", order2);
+       
         
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-        dispatcher.forward(request, response);
-        
-        
+        dispatcher.forward(request, response);  
+    
     }
-    
-    
 }

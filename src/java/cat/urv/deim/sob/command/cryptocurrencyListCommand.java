@@ -10,7 +10,6 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,11 +22,14 @@ public class cryptocurrencyListCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
+        String order = request.getParameter("order");
+        if (order == null) order = "DESC";
+        
         String view = "views/cryptocurrency-list.jsp";
         
         CryptocurrencyService cs = new CryptocurrencyService();
  
-        List <Cryptocurrency> list = cs.findAll("DESC");
+        List <Cryptocurrency> list = cs.findAll(order);
             //request.setAttribute("message", "No s'han trobat cryptos"); 
         
         request.setAttribute("cryptoList", list);

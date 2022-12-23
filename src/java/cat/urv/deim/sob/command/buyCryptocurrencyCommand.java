@@ -5,6 +5,7 @@
 package cat.urv.deim.sob.command;
 
 import cat.urv.deim.sob.model.Cryptocurrency;
+import cat.urv.deim.sob.model.Order;
 import cat.urv.deim.sob.service.CryptocurrencyService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -18,19 +19,18 @@ import java.util.List;
  *
  * @author marcr
  */
-public class ajaxCommand implements Command {
+public class buyCryptocurrencyCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
-        String view = "views/cryptocurrency-list.jsp";
+        String view = "views/buyCryptocurrency.jsp";
         
         CryptocurrencyService cs = new CryptocurrencyService();
  
-        List <Cryptocurrency> list = cs.findAll("ASC");
-            //request.setAttribute("message", "No s'han trobat cryptos"); 
+        Cryptocurrency crypto = cs.getCryptocurrency("2");
         
-        request.setAttribute("cryptoList", list);
+        request.setAttribute("crypto", crypto);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(view);
         dispatcher.forward(request, response);

@@ -19,6 +19,25 @@
       
         <h2> Criptomoneda detallada </h2>
          
+        
+        
+        <c:choose>
+        <c:when test="${not empty order}">
+            <c:if test = "${order.cryptocurrency.name == 'bitcoin'}">
+                <img src='resources/img/bitcoin.jpg' width='70' height='70'>
+            </c:if>
+            <c:if test = "${order.cryptocurrency.name == 'etherium'}">
+                <img src='resources/img/etherium.png' width='70' height='70'>
+            </c:if>   
+            
+            <b>${order.cryptocurrency.name} </b> <br> <hr> 
+            ${order.cryptocurrency.description}
+            <p>Price history: ${order.cryptocurrency.lastQuote} </p><br><br>
+            <p>Last transaction: </p>
+            ${order.amount} <br>
+            ${order.euros} <br>
+        </c:when>    
+        <c:otherwise>
             <c:if test = "${crypto.name == 'bitcoin'}">
                 <img src='resources/img/bitcoin.jpg' width='70' height='70'>
             </c:if>
@@ -27,10 +46,20 @@
             </c:if>   
             
             <b>${crypto.name} </b> <br> <hr> 
-            ${crypto.description}
-            <p>Price history: ${crypto.lastQuote} </p><br><br>       
+            ${crypto.description} <br>
+        </c:otherwise>
+        </c:choose>
+        
             
-            <button class="bi bi-cart btn" > Buy </button>
+             <a href="http://localhost:8080/SOBASE/buyCryptocurrency.do" target="_blank" >
+                 <button class="bi bi-cart btn" > Buy </button> </a>
     </body>
+    
+    <script>
+        $( "#button" ).click(function() {
+            window.location.replace("http://localhost:8080/SOBASE/buyCryptocurrency.do");
+        });
+        
+    </script>
     
 </html>

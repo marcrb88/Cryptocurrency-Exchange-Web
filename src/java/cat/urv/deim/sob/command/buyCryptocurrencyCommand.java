@@ -24,13 +24,16 @@ public class buyCryptocurrencyCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
+        String cryptoId = request.getParameter("id");
+        
         String view = "views/buyCryptocurrency.jsp";
         
         CryptocurrencyService cs = new CryptocurrencyService();
  
-        Cryptocurrency crypto = cs.getCryptocurrency("2");
+        Cryptocurrency crypto = cs.getCryptocurrency(cryptoId);
         
         request.setAttribute("crypto", crypto);
+        request.setAttribute("cryptoId", cryptoId);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(view);
         dispatcher.forward(request, response);

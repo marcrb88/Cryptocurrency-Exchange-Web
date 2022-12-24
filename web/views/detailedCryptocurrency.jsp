@@ -50,16 +50,15 @@
         </c:otherwise>
         </c:choose>
         
-            
-             <a href="http://localhost:8080/SOBASE/buyCryptocurrency.do" target="_blank" >
-                 <button class="bi bi-cart btn" > Buy </button> </a>
+            <button id="button" class="bi bi-cart btn" > Buy </button> </a>
     </body>
     
     <script>
         $( "#button" ).click(function() {
-            window.location.replace("http://localhost:8080/SOBASE/buyCryptocurrency.do");
+            window.open("http://localhost:8080/SOBASE/buyCryptocurrency.do?id=${cryptoId}");
         });
         
     </script>
     
+
 </html>

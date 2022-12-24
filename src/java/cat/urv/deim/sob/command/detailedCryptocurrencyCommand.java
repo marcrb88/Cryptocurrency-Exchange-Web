@@ -39,6 +39,7 @@ public class detailedCryptocurrencyCommand implements Command {
             request.setAttribute("order", order);
         }
         
+        request.setAttribute("cryptoId", cryptoId);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(view);
         dispatcher.forward(request, response);

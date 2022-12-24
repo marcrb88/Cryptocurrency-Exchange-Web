@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Compra de la criptomoneda</h1>
-    <form action="resumePurchase.do" class="form-horizontal" method="post"> 
+    <form action="resumePurchase.do?id=${cryptoId}"  class="form-horizontal" method="post"> 
         <div class="form-group">
             <label class="col-md-3 control-label">
                 Quantitat a adquirir

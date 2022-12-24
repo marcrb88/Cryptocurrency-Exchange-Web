@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>El resum de la teva compra</h1>
+        <h1>El resum de la teva compra amb id: ${order.id}: </h1>
+        <p> ${order.amount} <p>
     </body>
 </html>

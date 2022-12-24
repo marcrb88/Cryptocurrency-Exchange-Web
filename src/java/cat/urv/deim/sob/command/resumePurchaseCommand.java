@@ -10,6 +10,7 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.ws.rs.core.Response;
 import java.io.IOException;
 
 
@@ -21,18 +22,18 @@ public class resumePurchaseCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String cryptoId = request.getParameter("id");
+        Integer id = 0;
         
         String view = "views/resumePurchase.jsp";
-        Order order = new Order();
-        order.setAmount(Float.valueOf(request.getParameter("amount")));
         
         CryptocurrencyService cs = new CryptocurrencyService();
- 
-        Order order2 = cs.getOrder("2"); 
+        Response responseCrypto = cs.postCrypto(Integer.valueOf(cryptoId), Float.valueOf(request.getParameter("amount")), id++);
+        responseCrypto.readEntity(String.class);
        
-        request.setAttribute("order", order2);
+        Order order = cs.getOrder(cryptoId);
+        request.setAttribute("order", order);
        
-        
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(view);
         dispatcher.forward(request, response);  

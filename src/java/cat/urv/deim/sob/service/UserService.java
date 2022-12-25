@@ -9,29 +9,21 @@ import jakarta.ws.rs.client.Entity;
 public class UserService {
     private WebTarget webTarget;
     private jakarta.ws.rs.client.Client client;
-    private static final String BASE_URI = "http://localhost:8080/UserService/rest/api";
+    private static final String BASE_URI = "http://localhost:8080/SO-API_REST/rest/api/v1/";
     
     public UserService() {
         client = jakarta.ws.rs.client.ClientBuilder.newClient();
-        webTarget = client.target(BASE_URI).path("user");
+        webTarget = client.target(BASE_URI);
     }
     
-    public User findUserByEmail(User user){
-        String email = user.getEmail();
-        Response response = webTarget.path(email)
+    public Boolean checkAuthentication(String username, String password){
+        
+        Response response = webTarget.path("credentials").path(username).path(password)
                 .request(MediaType.APPLICATION_JSON)
                 .get();
-        if (response.getStatus() == 200) {
-            return response.readEntity(User.class);
-        }
-        return null;
+       
+        return (response.getStatus() == 200) ? true : false;
     }
 	
-    public boolean addUser(User user) {
-       Response response = webTarget.request(MediaType.APPLICATION_JSON)
-               .post(Entity.entity(user, MediaType.APPLICATION_JSON), 
-                    Response.class);
-     return response.getStatus() == 201;
-    }
 
 }

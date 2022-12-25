@@ -6,6 +6,7 @@ package cat.urv.deim.sob.command;
 
 import cat.urv.deim.sob.model.Cryptocurrency;
 import cat.urv.deim.sob.model.Order;
+import cat.urv.deim.sob.model.User;
 import cat.urv.deim.sob.service.CryptocurrencyService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -40,6 +41,8 @@ public class detailedCryptocurrencyCommand implements Command {
         }
         
         request.setAttribute("cryptoId", cryptoId);
+        User user = new User();
+        request.setAttribute("user", user);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(view);
         dispatcher.forward(request, response);

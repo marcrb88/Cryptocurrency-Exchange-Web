@@ -18,10 +18,13 @@
         "URI": "/buyCryptocurrency",
         "class": "cat.urv.deim.sob.command.buyCryptocurrencyCommand" 
     },
-    
     {
         "URI": "/resumePurchase",
         "class": "cat.urv.deim.sob.command.resumePurchaseCommand" 
+    },
+    {
+        "URI": "/authentication",
+        "class": "cat.urv.deim.sob.command.authenticationRequiredCommand" 
     }
   ]
 }

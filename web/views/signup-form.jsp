@@ -15,35 +15,28 @@
 <body>
 	<div class="container">
 		<div class="col-md-offset-2 col-md-7">
-			<h2 class="text-center">Sign Up Example - SOB</h2>
+			<h2 class="text-center">Authentication Form</h2>
 			<div class="panel panel-info">
-				<div class="panel-heading">
-					<div class="panel-title">Sign Up</div>
-				</div>
+			
 				<div class="panel-body">
 					<form action="signUpForm.do" class="form-horizontal"
 						method="post">
 
 						<div class="form-group">
-							<label for="firstname" class="col-md-3 control-label">First
-								Name</label>
+							<label for="firstname" class="col-md-3 control-label">Username
+                                                        </label>
 							<div class="col-md-9">
-								<input type="text" name="firstName" value="${user.firstName}" class="form-control" />
+								<input type="text" name="username" value="${user.username}" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="lastname" class="col-md-3 control-label">Last
-								Name</label>
+							<label for="lastname" class="col-md-3 control-label">Password
+                                                        </label>
 							<div class="col-md-9">
-								<input type="text" name="lastName" value="${user.lastName}" class="form-control" />
+								<input type="text" name="password" value="${user.password}" class="form-control" />
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="email" class="col-md-3 control-label">Email</label>
-							<div class="col-md-9">
-								<input type="text" name="email" value="${user.email}" class="form-control" />
-							</div>
-						</div>
+						
 						<div class="form-group">
 							<!-- Button -->
 							<div class="col-md-offset-3 col-md-9">

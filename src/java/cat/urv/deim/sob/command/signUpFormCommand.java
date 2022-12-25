@@ -16,27 +16,31 @@ public class signUpFormCommand implements Command {
             HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 1. Get input
+      
         User user = new User();
-        user.setFirstName(request.getParameter("firstName"));
-        user.setLastName(request.getParameter("lastName"));
-        user.setEmail(request.getParameter("email"));
-        
-        String view = "views/signup-success.jsp";
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+     
+        String view = "views/signup-form.jsp";
                 
-        UserService service = new UserService();
-        if (service.findUserByEmail(user) == null) {
-            service.addUser(user);
-        } else {
-            // Try again
-            view = "views/signup-form.jsp";
-            request.setAttribute("message", "A user with this e-mail address already exists!");
+        UserService us = new UserService();
+        if (us.checkAuthentication(username, password) != null) {
+            if (us.checkAuthentication(username, password)) {
+                view = "views/signup-success.jsp";
+                user.setAuthenticated(true);
+                request.setAttribute("message", "Authentication done!");
+            }
+            else 
+                request.setAttribute("message", "Error in the authentication process. Try again");
+            
+        
         }
+        else 
+            request.setAttribute("message", "It's been an error in the authentication process");
         
-        request.setAttribute("user", user);
         
-        // 3. produce the view with the web result
         RequestDispatcher dispatcher = request.getRequestDispatcher(view);
         dispatcher.forward(request, response);
+        
     }
 }

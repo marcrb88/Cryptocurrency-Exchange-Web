@@ -25,12 +25,12 @@ public class cryptocurrencyListCommand implements Command {
         String order = request.getParameter("order");
         if (order == null) order = "DESC";
         
-        String view = "views/cryptocurrency-list.jsp";
+        String view = "views/listCryptocurrency.jsp";
         
         CryptocurrencyService cs = new CryptocurrencyService();
  
         List <Cryptocurrency> list = cs.findAll(order);
-            //request.setAttribute("message", "No s'han trobat cryptos"); 
+        //request.setAttribute("message", "No s'han trobat cryptos"); 
         
         request.setAttribute("cryptoList", list);
         

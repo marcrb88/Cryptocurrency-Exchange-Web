@@ -14,20 +14,8 @@
 <body>
 	<div class="container">
 		<div class="col-md-offset-2 col-md-7">
-			<h1>Welcome!</h1>
+			<h1>Authorization done! Welcome</h1>
 			<hr />
-
-			<table class="table table-striped table-bordered">
-				<tr>
-					<td><b>First Name </b>: ${user.firstName}</td>
-				</tr>
-				<tr>
-					<td><b>Last Name </b> : ${user.lastName}</td>
-				</tr>
-				<tr>
-					<td><b>Email </b>: ${user.email}</td>
-				</tr>
-			</table>
                         <a class="btn" href="<c:url value="/" />">Go Back</a>
 		</div>
 	</div>

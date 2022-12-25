@@ -50,12 +50,17 @@
         </c:otherwise>
         </c:choose>
         
+            
             <button id="button" class="bi bi-cart btn" > Buy </button> </a>
     </body>
     
     <script>
         $( "#button" ).click(function() {
-            window.open("http://localhost:8080/SOBASE/buyCryptocurrency.do?id=${cryptoId}");
+            if (${user.authenticated == true})
+                window.open("http://localhost:8080/SOBASE/buyCryptocurrency.do?id=${cryptoId}");
+            else {
+                window.open("http://localhost:8080/SOBASE/authentication.do");
+            }
         });
         
     </script>

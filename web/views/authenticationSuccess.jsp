@@ -14,9 +14,9 @@
 <body>
 	<div class="container">
 		<div class="col-md-offset-2 col-md-7">
-			<h1>Authorization done! Welcome</h1>
+			<h1>Benvingut ${userAuth.username}</h1>
 			<hr />
-                        <a class="btn" href="<c:url value="/detailedCryptocurrency.do?id=2&userAuth=${userAuth}" />">Go Back</a>
+                        <a class="btn" href="<c:url value="/detailedCryptocurrency.do?id=2&userAuth=${userAuth.authenticated}" />">Go Back</a>
 		</div>
 	</div>
 </body>

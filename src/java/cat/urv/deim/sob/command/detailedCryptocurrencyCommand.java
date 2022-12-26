@@ -26,6 +26,7 @@ public class detailedCryptocurrencyCommand implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
         String cryptoId = request.getParameter("id");
+        String userAuth = request.getParameter("userAuth");
         
         String view = "views/detailedCryptocurrency.jsp";
         
@@ -41,12 +42,10 @@ public class detailedCryptocurrencyCommand implements Command {
         }
         
         request.setAttribute("cryptoId", cryptoId);
-        User user = new User();
-        request.setAttribute("user", user);
+        request.setAttribute("userAuth", userAuth);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(view);
         dispatcher.forward(request, response);
-        
         
     }
     

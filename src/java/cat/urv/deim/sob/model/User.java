@@ -6,15 +6,10 @@ public class User {
     private boolean authenticated;
 
     public User() {}
-    
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-        this.authenticated = false;
-    }
-
+   
     public String getUsername() {
         return username;
+        
     }
 
     public void setUsername(String username) {

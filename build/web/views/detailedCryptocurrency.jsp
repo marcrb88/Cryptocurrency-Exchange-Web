@@ -52,15 +52,22 @@
         
             
             <button id="button" class="bi bi-cart btn" > Buy </button> </a>
+            
     </body>
     
     <script>
         $( "#button" ).click(function() {
-            if (${user.authenticated == true})
-                window.open("http://localhost:8080/SOBASE/buyCryptocurrency.do?id=${cryptoId}");
-            else {
-                window.open("http://localhost:8080/SOBASE/authentication.do");
-            }
+            
+        <c:choose>
+            <c:when test="${not empty userAuth}">
+                 window.open("http://localhost:8080/SOBASE/buyCryptocurrency.do?id=${cryptoId}");
+            </c:when>    
+            <c:otherwise>
+                window.open("http://localhost:8080/SOBASE/authentication.do?id=${cryptoId}");
+       
+            </c:otherwise>
+        </c:choose>
+            
         });
         
     </script>

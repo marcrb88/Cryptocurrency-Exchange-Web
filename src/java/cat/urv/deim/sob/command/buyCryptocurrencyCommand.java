@@ -25,6 +25,7 @@ public class buyCryptocurrencyCommand implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
         String cryptoId = request.getParameter("id");
+         
         
         String view = "views/buyCryptocurrency.jsp";
         

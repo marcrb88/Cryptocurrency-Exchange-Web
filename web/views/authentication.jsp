@@ -19,7 +19,7 @@
 			<div class="panel panel-info">
 			
 				<div class="panel-body">
-					<form action="signUpForm.do" class="form-horizontal"
+					<form action="authentication.do?id=${cryptoId}" class="form-horizontal"
 						method="post">
 
 						<div class="form-group">

@@ -14,10 +14,27 @@
 <body>
 	<div class="container">
 		<div class="col-md-offset-2 col-md-7">
-			<h1>Benvingut ${userAuth.username}</h1>
+                        <h1> Benvingut ${userAuth.username}</h1> 
+                        <p id ="username" ></p>
+                        <p id ="password" ></p>
+                        <p id ="auth" ></p>
+                        
 			<hr />
                         <a class="btn" href="<c:url value="/detailedCryptocurrency.do?id=2&userAuth=${userAuth.authenticated}" />">Go Back</a>
 		</div>
 	</div>
 </body>
+
+    <script>
+        $( "h1" ).click(function() {
+            
+           $("p#username").text("Username: ${userAuth.username}");
+           $("p#password").text("Password: ${userAuth.password}");
+           $("p#auth").text("Authenticated: ${userAuth.authenticated}");
+            
+        });
+        
+    </script>
+
+
 </html>

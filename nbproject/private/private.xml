@@ -3,33 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/SOBASE/web/views/signup-form.jsp</file>
-            <file>file:/C:/SOBASE/web/resources/img/bitcoin.jpg</file>
-            <file>file:/C:/SOBASE/web/views/resumePurchase.jsp</file>
+            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/detailedCryptocurrencyCommand.java</file>
+            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Cryptocurrency.java</file>
             <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/resumePurchaseCommand.java</file>
-            <file>file:/C:/SOBASE/web/resources/img/buy.png</file>
+            <file>file:/C:/SOBASE/web/views/resumePurchase.jsp</file>
+            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/service/UserService.java</file>
             <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/buyCryptocurrencyCommand.java</file>
-            <file>file:/C:/SOBASE/web/resources/js/bootstrap.min.js</file>
+            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Order.java</file>
             <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/User.java</file>
-            <file>file:/C:/SOBASE/web/resources/css/bootstrap.min.css</file>
+            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Credentials.java</file>
+            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/authenticationCommand.java</file>
+            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/cryptocurrencyListCommand.java</file>
             <file>file:/C:/SOBASE/web/views/detailedCryptocurrency.jsp</file>
             <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/service/CryptocurrencyService.java</file>
-            <file>file:/C:/SOBASE/web/views/signup-success.jsp</file>
+            <file>file:/C:/SOBASE/web/views/authentication.jsp</file>
             <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/ControllerServlet.java</file>
             <file>file:/C:/SOBASE/web/views/buyCryptocurrency.jsp</file>
             <file>file:/C:/SOBASE/web/views/listCryptocurrency.jsp</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Customer.java</file>
             <file>file:/C:/SOBASE/web/WEB-INF/mvc-setup.json</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/detailedCryptocurrencyCommand.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Cryptocurrency.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/signUpFormCommand.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/service/UserService.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Order.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Credentials.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/cryptocurrencyListCommand.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/Command.java</file>
-            <file>file:/C:/SOBASE/nbproject/build-impl.xml</file>
-            <file>file:/C:/SOBASE/web/WEB-INF/test.jsp</file>
+            <file>file:/C:/SOBASE/web/views/authenticationSuccess.jsp</file>
         </group>
     </open-files>
 </project-private>

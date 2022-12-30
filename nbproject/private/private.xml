@@ -3,25 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/detailedCryptocurrencyCommand.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Cryptocurrency.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/resumePurchaseCommand.java</file>
-            <file>file:/C:/SOBASE/web/views/resumePurchase.jsp</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/service/UserService.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/buyCryptocurrencyCommand.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Order.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/User.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/model/Credentials.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/authenticationCommand.java</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/command/cryptocurrencyListCommand.java</file>
-            <file>file:/C:/SOBASE/web/views/detailedCryptocurrency.jsp</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/service/CryptocurrencyService.java</file>
-            <file>file:/C:/SOBASE/web/views/authentication.jsp</file>
-            <file>file:/C:/SOBASE/src/java/cat/urv/deim/sob/ControllerServlet.java</file>
-            <file>file:/C:/SOBASE/web/views/buyCryptocurrency.jsp</file>
-            <file>file:/C:/SOBASE/web/views/listCryptocurrency.jsp</file>
-            <file>file:/C:/SOBASE/web/WEB-INF/mvc-setup.json</file>
-            <file>file:/C:/SOBASE/web/views/authenticationSuccess.jsp</file>
+            <file>file:/C:/Users/marcb/OneDrive/Documentos/MEGAsync/URV/4rt%20Curs/Sistemes%20Oberts/SOB-Pract2/web/views/listCryptocurrency.jsp</file>
         </group>
     </open-files>
 </project-private>

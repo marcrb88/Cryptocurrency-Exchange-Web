@@ -1,10 +1,9 @@
 {
   "commands": [
     {
-        "URI": "/cryptocurrency",
+        "URI": "/cryptocurrencyList",
         "class": "cat.urv.deim.sob.command.cryptocurrencyListCommand" 
     },
-    
     {
         "URI": "/detailedCryptocurrency",
         "class": "cat.urv.deim.sob.command.detailedCryptocurrencyCommand" 
@@ -14,12 +13,12 @@
         "class": "cat.urv.deim.sob.command.buyCryptocurrencyCommand" 
     },
     {
-        "URI": "/resumePurchase",
-        "class": "cat.urv.deim.sob.command.resumePurchaseCommand" 
-    },
-    {
         "URI": "/authentication",
         "class": "cat.urv.deim.sob.command.authenticationCommand" 
+    },
+    {
+        "URI": "/summaryOrder",
+        "class": "cat.urv.deim.sob.command.summaryOrderCommand" 
     }
   ]
 }

@@ -8,6 +8,6 @@
 <!DOCTYPE html>
 <html>
     <body>
-       <jsp:forward page="/cryptocurrency.do" />
+       <jsp:forward page="/cryptocurrencyList.do" />
     </body>
 </html>

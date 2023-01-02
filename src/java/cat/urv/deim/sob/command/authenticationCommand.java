@@ -1,52 +1,46 @@
 package cat.urv.deim.sob.command;
 
-import cat.urv.deim.sob.model.User;
-import cat.urv.deim.sob.service.UserService;
+import cat.urv.deim.sob.model.Customer;
+import cat.urv.deim.sob.service.CustomerService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.ServletException;
 import java.io.IOException;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.http.HttpSession;
+import java.util.Base64;
 
 public class authenticationCommand implements Command {
 
     @Override
-    public void execute(
-            HttpServletRequest request,
-            HttpServletResponse response)
-            throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-      
-        User userAuth = new User();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String cryptoId = request.getParameter("id");
-        
-        userAuth.setPassword(password);
-        userAuth.setUsername(username);
-     
+
         String view = "views/authentication.jsp";
-    if (username != null || password != null) {            
-        UserService us = new UserService();
-        if (us.checkAuthentication(username, password) != null) {
-            if (us.checkAuthentication(username, password)) {
-                view = "views/authenticationSuccess.jsp";
-                userAuth.setAuthenticated(true);
-                request.setAttribute("userAuth", userAuth);
-                request.setAttribute("message", "Authentication done!");
-            }
-            else 
+
+        HttpSession sesion = request.getSession(true);
+
+        if (username != null && password != null) {
+            CustomerService cs = new CustomerService();
+            Customer customer = cs.login(username, password);
+            if (customer != null) {
+                sesion.setAttribute("customer", customer);
+
+                String originalInput = username + ":" + password;
+                String credentials = Base64.getEncoder().encodeToString(originalInput.getBytes());
+                sesion.setAttribute("credentials", credentials);
+
+                response.sendRedirect((String)sesion.getAttribute("lastPage"));
+            } else {
                 request.setAttribute("message", "Your credentials are wrong. Try again");
-            
-        
+                RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+                dispatcher.forward(request, response);
+            }
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+            dispatcher.forward(request, response);
         }
-        else 
-            request.setAttribute("message", "It's been an error in the authentication process");
-        
-    }    
-        request.setAttribute("cryptoId", Integer.valueOf(cryptoId));
-        RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-        dispatcher.forward(request, response);
-        
     }
 }

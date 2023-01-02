@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Buy | ${crypto.name}</title>
+        <title>Order | ${order.id}</title>
         <link href="<c:url value="/resources/css/bootstrap.min.css" />"
               rel="stylesheet">
         <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
@@ -43,18 +43,19 @@
                     <div id="login-column" class="col-md-offset-4 col-md-4">
                         <a href="cryptocurrencyList.do"><h2 class="text-center" style="margin-top: 120px;">Marc's Exchange</h2></a>
                         <div id="login-box" class="col-md-12">
-                            <form id="login-form" class="form" action="buyCryptocurrency.do?id=${crypto.id}" method="post">
-                                <h3 class="text-center text-info">Buy ${crypto.name}</h3>
+                            <form class="form">
+                                <h3 class="text-center text-info">Information of order nº${order.id}</h3>
                                 <div class="form-group">
-                                    <label for="username" class="text-info">Amount (${crypto.name}) to be purchased:</label><br>
-                                    <input type="number" step="any" min=0 name="amount" id="amount" class="form-control" required>
+                                    <label for="username" class="text-info">Date:</label><br>
+                                    ${order.datePurchase}
                                 </div>
                                 <div class="form-group">
-                                    <label for="password" class="text-info">Last quote:</label><br>
-                                    ${crypto.lastQuote} €
+                                    <label for="password" class="text-info">Amount (${order.cryptocurrency.name}):</label><br>
+                                    ${order.amount}
                                 </div>
-                                <div class="form-group" style="margin-top: 30px">
-                                    <button type="submit" class="btn btn-primary btn-block">Buy</button>
+                                <div class="form-group">
+                                    <label for="password" class="text-info">Cost:</label><br>
+                                    ${order.euros} €
                                 </div>
                             </form>
                         </div>

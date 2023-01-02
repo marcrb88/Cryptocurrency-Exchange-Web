@@ -1,26 +1,14 @@
-
 package cat.urv.deim.sob.model;
 
-import cat.urv.deim.sob.model.Credentials;
-import java.util.Collection;
-import java.io.Serializable;
-
-public class Customer implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Customer {
     
     private int id;
 
     private String name;
     
-
     private String email;
-    
-    private Credentials password;
-    
-    private String phone;
-
-    private Collection<Order> orders;
-    
+        
+    private String phone;    
     
     public Customer() {}
 

@@ -1,13 +1,8 @@
 package cat.urv.deim.sob.model;
-import cat.urv.deim.sob.model.Customer;
 
-
-import java.io.Serializable;
 import java.util.Date;
 
-public class Order implements Serializable {
-    private static final long serialVersionUID = 1L;
-
+public class Order {
     private int id;
 
     private Date datePurchase;
@@ -22,14 +17,6 @@ public class Order implements Serializable {
     
     
     public Order() {}
-
-    public Order(int id, Date datePurchase, float amount, Customer customer, Cryptocurrency cryptocurrency) {
-        this.id = id;
-        this.datePurchase = datePurchase;
-        this.amount = amount;
-        this.customer = customer;
-        this.cryptocurrency = cryptocurrency;
-    }
 
     public int getId() {
         return id;

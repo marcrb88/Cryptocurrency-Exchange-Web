@@ -34,7 +34,7 @@ public class buyCryptocurrencyCommand implements Command {
                 Order order = cs.createOrder(cryptoId, amount, credentials);
                 
                 int orderId = order.getId();
-                response.sendRedirect("http://localhost:8080/SOBASE/summaryOrder.do?id="+orderId);
+                response.sendRedirect("summaryOrder.do?id="+orderId);
             } else {
                 view = "views/buyCryptocurrency.jsp";
 
@@ -48,7 +48,7 @@ public class buyCryptocurrencyCommand implements Command {
         } else {
             String lastPage = request.getRequestURL().toString() + "?" + request.getQueryString();
             sesion.setAttribute("lastPage", lastPage);
-            response.sendRedirect("http://localhost:8080/SOBASE/authentication.do");
+            response.sendRedirect("authentication.do");
         }
     }
 }

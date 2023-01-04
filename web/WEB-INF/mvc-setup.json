@@ -17,6 +17,10 @@
         "class": "cat.urv.deim.sob.command.authenticationCommand" 
     },
     {
+        "URI": "/register",
+        "class": "cat.urv.deim.sob.command.registerCommand" 
+    },
+    {
         "URI": "/summaryOrder",
         "class": "cat.urv.deim.sob.command.summaryOrderCommand" 
     }

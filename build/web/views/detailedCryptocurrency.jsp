@@ -52,7 +52,7 @@
                             </li>
                         </c:when>
                         <c:otherwise>
-                            <li><a href="#">Sign Up</a></li>
+                            <li><a href="register.do">Sign Up</a></li>
                             <li><a href="authentication.do">Login</a></li>
                             </c:otherwise>
                         </c:choose>
@@ -77,7 +77,7 @@
 
             <c:if test="${not empty orders}">
                 <hr>
-                <h3><b>Last transactions</b></h3>
+                <h3><b>Latest Transactions</b></h3>
                 <table id="cryptoList" class="table">
                     <thead>
                         <tr>
@@ -101,7 +101,14 @@
     </body>
     <script>
         $("#button").click(function () {
-            window.open("http://localhost:8080/SOBASE/buyCryptocurrency.do?id=${param.id}");
+        <c:choose>
+            <c:when test="${not empty customer}">
+            window.open("buyCryptocurrency.do?id=${crypto.id}");
+            </c:when>
+            <c:otherwise>
+            location.replace("authentication.do");
+            </c:otherwise>
+        </c:choose>
         });
     </script>
 </html>

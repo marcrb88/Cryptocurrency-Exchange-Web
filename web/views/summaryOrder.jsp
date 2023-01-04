@@ -22,18 +22,26 @@
                     <li class="active"><a href="cryptocurrencyList.do">Home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hola ${customer.name}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <p>Name: ${customer.name}</p>
-                            <p>Email: ${customer.email}</p>
-                            <c:if test="${not empty customer.phone}">
-                                <p>Phone: ${customer.phone}</p>
-                            </c:if>
-                        </div>
-                    </li>
+                    <c:choose>
+                        <c:when test="${not empty customer}">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Hola ${customer.name}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <p>Name: ${customer.name}</p>
+                                    <p>Email: ${customer.email}</p>
+                                    <c:if test="${not empty customer.phone}">
+                                        <p>Phone: ${customer.phone}</p>
+                                    </c:if>
+                                </div>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="register.do">Sign Up</a></li>
+                            <li><a href="authentication.do">Login</a></li>
+                            </c:otherwise>
+                        </c:choose>
                 </ul>
             </div>
         </nav>
@@ -44,19 +52,26 @@
                         <a href="cryptocurrencyList.do"><h2 class="text-center" style="margin-top: 120px;">Marc's Exchange</h2></a>
                         <div id="login-box" class="col-md-12">
                             <form class="form">
-                                <h3 class="text-center text-info">Information of order nº${order.id}</h3>
-                                <div class="form-group">
-                                    <label for="username" class="text-info">Date:</label><br>
-                                    ${order.datePurchase}
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="text-info">Amount (${order.cryptocurrency.name}):</label><br>
-                                    ${order.amount}
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="text-info">Cost:</label><br>
-                                    ${order.euros} €
-                                </div>
+                                <c:choose>
+                                    <c:when test="${not empty order}">
+                                        <h3 class="text-center text-info">Information of order nº${order.id}</h3>
+                                        <div class="form-group">
+                                            <label class="text-info">Date:</label><br>
+                                            ${order.datePurchase}
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-info">Amount (${order.cryptocurrency.name}):</label><br>
+                                            ${order.amount}
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-info">Cost:</label><br>
+                                            ${order.euros} €
+                                        </div>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <h3 class="text-center text-info">Order not found</h3>
+                                        </c:otherwise>
+                                    </c:choose>
                             </form>
                         </div>
                     </div>

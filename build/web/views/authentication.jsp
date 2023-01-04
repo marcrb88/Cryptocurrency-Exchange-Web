@@ -28,13 +28,17 @@
                                 <h3 class="text-center text-info">Login to continue</h3>
                                 <div class="form-group">
                                     <label for="username" class="text-info">Username:</label><br>
-                                    <input type="text" name="username" value="${username}" id="username" class="form-control" required>
+                                    <input type="text" name="username" value="${param.username}" id="username" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="text-info">Password:</label><br>
-                                    <input type="password" name="password" value="${password}" id="password" class="form-control" required>
+                                    <input type="password" name="password" value="${param.password}" id="password" class="form-control" required>
                                 </div>
-                                <div class="form-group" style="margin-top: 30px">
+                                <div class="text-right">
+                                    Don't have an account?
+                                    <a href="register.do" class="text-info">Register here</a>
+                                </div>
+                                <div class="form-group" style="margin-top: 10px">
                                     <button type="submit" class="btn btn-primary btn-block">Log in</button>
                                 </div>
                             </form>

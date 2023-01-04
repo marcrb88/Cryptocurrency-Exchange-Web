@@ -29,4 +29,28 @@ public class CustomerService {
                 .post(Entity.entity(login, MediaType.APPLICATION_JSON), Response.class);
         return (response.getStatus() == 200) ? response.readEntity(Customer.class) : null;
     }
+    
+    public Customer register(String username, String password, String name, String phone) {
+        WebTarget resource = webTarget.path("register");
+        String register;
+        if (phone.isEmpty()) {
+            register = Json.createObjectBuilder()
+            .add("username", username)
+            .add("password", password)
+            .add("name", name)
+            .build()
+            .toString();
+        } else {
+            register = Json.createObjectBuilder()
+            .add("username", username)
+            .add("password", password)
+            .add("name", name)
+            .add("phone", phone)
+            .build()
+            .toString();
+        }
+        Response response = resource.request(MediaType.APPLICATION_JSON)
+                .post(Entity.entity(register, MediaType.APPLICATION_JSON), Response.class);
+        return (response.getStatus() == 200) ? response.readEntity(Customer.class) : null;
+    }
 }

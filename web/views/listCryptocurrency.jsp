@@ -46,7 +46,7 @@
                             </li>
                         </c:when>
                         <c:otherwise>
-                            <li><a href="#">Sign Up</a></li>
+                            <li><a href="register.do">Sign Up</a></li>
                             <li><a href="authentication.do">Login</a></li>
                             </c:otherwise>
                         </c:choose>
@@ -82,9 +82,9 @@
         $("#priceOrder").click(function () {
             let searchParams = new URLSearchParams(window.location.search);
             if (searchParams.get('order') === "ASC") {
-                window.location.replace("http://localhost:8080/SOBASE/cryptocurrencyList.do?order=DESC");
+                window.location.replace("cryptocurrencyList.do?order=DESC");
             } else {
-                window.location.replace("http://localhost:8080/SOBASE/cryptocurrencyList.do?order=ASC");
+                window.location.replace("cryptocurrencyList.do?order=ASC");
             }
         });
 
@@ -95,9 +95,5 @@
                 "sScrollY": "200px"
             });
         });
-
-        function LogOut() {
-            alert("Logged Out");
-        }
     </script>
 </html>
